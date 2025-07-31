@@ -13,14 +13,4 @@ export default defineConfig({
 build: {
     outDir: 'dist',
   },
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://109.73.206.144:6969',
-        changeOrigin: true,
-        rewrite: (path) => path, 
-
-      },
-    },
-  },
 })

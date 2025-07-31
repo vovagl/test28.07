@@ -1,21 +1,26 @@
-import axios from 'axios';
+import axios from 'axios'
 
-const API_KEY = 'E6kUTYrYwZq2tN4QEtyzsbEBk3ie';
+const BASE_URL = 'http://109.73.206.144:6969'
+const API_KEY = 'E6kUTYrYwZq2tN4QEtyzsbEBk3ie'
 
-const BASE_URL = '/api';
+function request(path, params = {}) {
+  return axios.get(`${BASE_URL}/${path}`, {
+    params: { key: API_KEY, ...params }
+  })
+}
 
-const api = axios.create({ baseURL: BASE_URL });
+export function getIncomes(params) {
+  return request('incomes', params)
+}
 
-export const getStocks = (params) =>
-  api.get('/stocks', { params: { key: API_KEY, ...params } });
+export function getOrders(params) {
+  return request('orders', params)
+}
 
-export const getIncomes = (params) =>
-  api.get('/incomes', { params: { key: API_KEY, ...params } });
+export function getSales(params) {
+  return request('sales', params)
+}
 
-
-
-export const getOrders = (params) =>
-  api.get('/orders', { params: { key: API_KEY, ...params } });
-
-export const getSales = (params) =>
-  api.get('/sales', { params: { key: API_KEY, ...params } });
+export function getStocks(params) {
+  return request('stocks', params)
+}
