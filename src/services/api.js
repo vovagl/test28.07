@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'http://109.73.206.144:6969'
+const BASE_URL = '/api';
 const API_KEY = 'E6kUTYrYwZq2tN4QEtyzsbEBk3ie'
 
 function request(path, params = {}) {
