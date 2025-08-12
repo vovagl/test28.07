@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = '/api';
+const BASE_URL = '/api' // теперь через прокси
 const API_KEY = 'E6kUTYrYwZq2tN4QEtyzsbEBk3ie'
 
 function request(path, params = {}) {
@@ -10,17 +10,17 @@ function request(path, params = {}) {
 }
 
 export function getIncomes(params) {
-  return request('incomes', params)
+  return request(`${BASE_URL}/incomes`, params)
 }
 
 export function getOrders(params) {
-  return request('orders', params)
+  return request(`${BASE_URL}/orders`, params)
 }
 
 export function getSales(params) {
-  return request('sales', params)
+  return request(`${BASE_URL}/sales`, params)
 }
 
 export function getStocks(params) {
-  return request('stocks', params)
+  return request(`${BASE_URL}/stocks`, params)
 }
